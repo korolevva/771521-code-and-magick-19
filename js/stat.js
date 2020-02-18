@@ -44,7 +44,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i].localeCompare('Вы') === 0) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(240, ' + getRandomInt(0,100) + '%, 50%)';
+      ctx.fillStyle = 'hsl(240, ' + getRandomInt(0, 100) + '%, 50%)';
     }
 
     ctx.fillText(Math.round(times[i]), CLOUD_X + (GAP_BEETWEN_COLUMNS * (i + 1)) + (BAR_WIDTH * i) + (BAR_WIDTH / 2), CLOUD_Y + CLOUD_HEIGHT - (GAP * 2) - FONT_GAP - ((barHeight * times[i]) / maxTime));
