@@ -19,8 +19,11 @@ function getMaxOfArray(numArray) {
   return Math.max.apply(null, numArray);
 }
 
-function getRandomInt() {
-  return Math.floor(Math.random() * Math.floor(101));
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 window.renderStatistics = function (ctx, names, times) {
@@ -41,7 +44,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i].localeCompare('Вы') === 0) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(240, ' + getRandomInt() + '%, 50%)';
+      ctx.fillStyle = 'hsl(240, ' + getRandomInt(0, 100) + '%, 50%)';
     }
 
     ctx.fillText(Math.round(times[i]), CLOUD_X + (GAP_BEETWEN_COLUMNS * (i + 1)) + (BAR_WIDTH * i) + (BAR_WIDTH / 2), CLOUD_Y + CLOUD_HEIGHT - (GAP * 2) - FONT_GAP - ((barHeight * times[i]) / maxTime));
