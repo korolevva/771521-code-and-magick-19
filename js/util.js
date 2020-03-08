@@ -17,7 +17,4 @@ window.util = {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  // getRandomColor: function (arrayColors) {
-  //   return arrayColors[window.util.getRandomInt(0, arrayColors.length)];
-  // }
 };

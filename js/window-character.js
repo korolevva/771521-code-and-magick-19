@@ -1,7 +1,7 @@
 'use strict';
 (function () {
   document.querySelector('.setup-similar').classList.remove('hidden');
-  var setup = document.querySelector('.setup');
+  var setup = window.setup.setupDialogElement;
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
   var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
