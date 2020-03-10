@@ -1,14 +1,9 @@
 'use strict';
 (function () {
-  window.colorize = {
-    getRandomColor: function (arrayColors) {
-      return arrayColors[window.util.getRandomInt(0, arrayColors.length - 1)];
-    }
-  };
 
   var colorize = function (element, arrayColors, inputColor) {
     element.addEventListener('click', function () {
-      var color = window.colorize.getRandomColor(arrayColors);
+      var color = window.util.getRandomElement(arrayColors);
       if (element.tagName.toLowerCase() === 'div') {
         element.style.backgroundColor = color;
       } else {
@@ -17,6 +12,8 @@
       inputColor.value = color;
     });
   };
+
+  window.colorize = colorize;
 
   colorize(window.windowCharacter.wizardCoat, window.setup.COAT_COLORS, window.windowCharacter.inputCoatColor);
   colorize(window.windowCharacter.wizarsEyes, window.setup.EYE_COLORS, window.windowCharacter.inputEyesColor);
