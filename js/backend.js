@@ -2,7 +2,6 @@
 (function () {
   var URL = 'https://js.dump.academy/code-and-magick/';
   var URL_DATA = 'https://js.dump.academy/code-and-magick/data';
-
   var load = function (onLoad, onError) {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
@@ -10,6 +9,7 @@
     xhr.addEventListener('load', function () {
       if (xhr.status === 200) {
         onLoad(xhr.response);
+        array = xhr.response;
       } else {
         onError('Статус ответа: ' + xhr.status + ' ' + xhr.statusText);
       }
