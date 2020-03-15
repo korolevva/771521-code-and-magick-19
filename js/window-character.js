@@ -1,20 +1,13 @@
 'use strict';
 (function () {
-  document.querySelector('.setup-similar').classList.remove('hidden');
   var setup = window.setup.setupDialogElement;
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
-  var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
-  var fireball = document.querySelector('.setup-fireball-wrap');
-  var wizarsEyes = document.querySelector('.setup-wizard .wizard-eyes');
   var inputCoatColor = document.querySelector('input[name=coat-color]');
   var inputEyesColor = document.querySelector('input[name=eyes-color]');
   var inputFireballColor = document.querySelector('input[name=fireball-color]');
 
   window.windowCharacter = {
-    wizardCoat: wizardCoat,
-    fireball: fireball,
-    wizarsEyes: wizarsEyes,
     inputCoatColor: inputCoatColor,
     inputEyesColor: inputEyesColor,
     inputFireballColor: inputFireballColor

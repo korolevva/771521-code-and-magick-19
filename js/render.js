@@ -10,17 +10,20 @@
 
     wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
     wizardElement.querySelector('.wizard-coat').style.fill = wizard.colorCoat;
-    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.colorEyes;
 
     return wizardElement;
   };
 
+  var similar = document.querySelector('.setup-similar');
   window.render = function (data) {
     var fragment = document.createDocumentFragment();
     var takeNumber = data.length > 4 ? 4 : data.length;
+    similarListElement.innerHTML = '';
     for (var i = 0; i < takeNumber; i++) {
       fragment.appendChild(renderWizard(data[i]));
     }
     similarListElement.appendChild(fragment);
+    similar.classList.remove('hidden');
   };
 })();
